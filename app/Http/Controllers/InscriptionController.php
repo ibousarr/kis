@@ -14,7 +14,7 @@ class InscriptionController extends Controller
      */
     public function index()
     {
-        //
+        return Inscription::all();
     }
 
     /**

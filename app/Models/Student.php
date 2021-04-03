@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\models\Inscription;
 
 class Student extends Model
 {
@@ -26,5 +27,10 @@ class Student extends Model
     	'adresse',
     	'photo'    	
     ];
+
+    public function inscriptions()
+    {
+       return $this->hasMany(Inscription::class);
+    }
 
 }
