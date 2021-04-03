@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Http\Resources\Students\StudentResource;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -46,7 +47,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return $student;
+        return new StudentResource($student);
     }
 
     /**

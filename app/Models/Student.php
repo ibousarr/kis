@@ -33,4 +33,9 @@ class Student extends Model
        return $this->hasMany(Inscription::class);
     }
 
+    public function getNomCompletAttribute()
+    {
+        return $this->prenoms . ' ' . $this->nom;
+    }
+
 }
