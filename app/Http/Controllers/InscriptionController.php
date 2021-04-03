@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inscription;
+use App\Models\Student;
+use App\Http\Resources\Inscriptions\InscriptionResource;
 use Illuminate\Http\Request;
 
 class InscriptionController extends Controller
@@ -12,9 +14,10 @@ class InscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Student $student)
     {
-        return Inscription::all();
+       
+        return InscriptionResource::collection($student->inscriptions);
     }
 
     /**

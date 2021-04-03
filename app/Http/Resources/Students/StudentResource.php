@@ -15,9 +15,10 @@ class StudentResource extends JsonResource
     public function toArray($request)
     {
         return [
+
             'prenoms'           =>  $this->prenoms,
             'nom'               =>  $this->nom,
-            'né(e) le'           =>  $this->datnais,
+            'né(e) le'          =>  $this->datnais,
             'lieunais'          =>  $this->lieunais,
             'sexe'              =>  $this->sexe,
             'matricule'         =>  $this->matricule,
@@ -30,7 +31,9 @@ class StudentResource extends JsonResource
             'tuteur'            =>  $this->tuteur,
             'adresse'           =>  $this->adresse,
             'photo'             =>  $this->photo,
-            'nom complet'       =>  $this->NomComplet   
+            'href'              =>  [
+                'inscriptions'  => route('inscriptions.index', $this->id)
+                ]   
 
 
         ];

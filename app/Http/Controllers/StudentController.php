@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Http\Resources\Students\StudentResource;
+use App\Http\Resources\Students\StudentCollection;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -15,7 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return Student::all();
+        return StudentCollection::collection(Student::paginate(10));
     }
 
     /**
